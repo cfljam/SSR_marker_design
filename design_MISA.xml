@@ -1,0 +1,27 @@
+<tool id="design_MISA_1" name="MISA Primer Design">
+  <description>Design primer sets using MISA output </description>
+  <command interpreter="bash">design_MISA.sh  $inputMisaFile $inputFastaFile $outputfile</command>
+  <inputs>
+    <param format="misa" name="inputMisaFile" type="data" label="Misa Source file"/>
+    <param format="fasta" name="inputFastaFile" type="data" label="Fasta Source file"/>
+  </inputs>
+  <outputs>
+     <data format="tabular"  name="outputfile" />
+  </outputs>
+<help>
+
+.. class:: infomark
+
+Design SSR primer sets from MISA output using Primer3
+
+This tool uses helper scripts developed at IPK
+
+http://pgrc.ipk-gatersleben.de/misa/primer3.html
+
+
+
+
+</help>
+
+
+</tool>

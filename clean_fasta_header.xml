@@ -1,0 +1,53 @@
+<?xml version="1.0"?>
+<tool id="clean_fasta_header_1" name="Clean fasta header">
+  <description>Removes fasta description fields in header </description>
+  <command>sed 's/\(>\w*\)\s*.*/\1/'  $inputFastaFile > $fasta_outputfile</command>
+  <inputs>
+    <param format="fasta" name="inputFastaFile" type="data" label="fasta File"/>
+  </inputs>
+  <outputs>
+     <data format="fasta"  name="fasta_outputfile" />
+  </outputs>
+<help>
+.. class:: infomark
+
+**TIP**
+
+This tool requires *fasta* format.
+
+It simply removes any additional definition strings from the header line prior to using tools that dont handle these.
+
+----
+
+**Example**
+
+--Query sequence
+
+::
+
+ &gt;contig00001  gene=isogroup00001  length=2159
+ tttAaGCATTTAACACTGCATATTGATTGATATAGTTGTTCAGTACAAGCCAATTACATT
+ GTAGACATAAAACAAAGCATTCGAAACAGTTGAAATTTTGATTCCTCTATACTGGATCAG
+ GCGGTAATCA
+ &gt;contig00003  gene=isogroup00001  length=2206  
+ ggTGGCTGCTTTCTCAAATCCACCCCTTCCCAAGGAAACCCTAAACTCGCAGATAAATTT
+
+
+
+--Output
+
+::
+
+ &gt;contig00001
+ ttAaGCATTTAACACTGCATATTGATTGATATAGTTGTTCAGTACAAGCCAATTACATT
+ GTAGACATAAAACAAAGCATTCGAAACAGTTGAAATTTTGATTCCTCTATACTGGATCAG
+ GCGGTAATCAGGGGAAGGAAACCATGGTGTAAGGCTGCATCCCATACTTTATCTATGTCA
+ >contig00003
+ ggTGGCTGCTTTCTCAAATCCACCCCTTCCCAAGGAAACCCTAAACTCGCAGATAAATTT
+ GTAGGGTTTCTATGTCGACCGAGCGCCGTCGGAAAGTGAGCCTTTTCGACGTAGTTGAC
+ GAGACCTCAGTCTCTG...
+
+
+</help>
+
+</tool>

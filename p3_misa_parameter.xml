@@ -1,0 +1,46 @@
+<?xml version="1.0"?>
+<tool id="p3_misa_1_parameter" name="Detect SSRs using MISA">
+  <description>Detect simple sequence repeats using MISA</description>
+  <command interpreter="perl">p3_misa_parameter.pl $inputfastaFile $misa_outputfile "1-$definition_1 2-$definition_2 3-$definition_3 4-$definition_4 5-$definition_5 6-$definition_6" "$interruptions" </command>
+  <inputs>
+    <param format="fasta" name="inputfastaFile" type="data" label="fasta Source file"/>
+     <param name="definition_1" size="20" type="text" value="10" label="Min Repeats for Unit Size 1"> </param>
+     <param name="definition_2" size="20" type="text" value="6" label="Min Repeats for Unit Size 2"> </param>
+     <param name="definition_3" size="20" type="text" value="5" label="Min Repeats for Unit Size 3"> </param>
+     <param name="definition_4" size="20" type="text" value="5" label="Min Repeats for Unit Size 4"> </param>
+     <param name="definition_5" size="20" type="text" value="5" label="Min Repeats for Unit Size 5"> </param>
+     <param name="definition_6" size="20" type="text" value="5" label="Min Repeats for Unit Size 6"> </param>
+     <param name="interruptions" type="text" area="false" size="5" label="Interruptions:max_difference_between_2_SSRs" value="100" />
+  </inputs>
+  <outputs>
+     <data format="tabular"  name="misa_outputfile" />
+  </outputs>
+<help>
+
+.. class:: infomark
+
+Detect simple sequence repeats using **MISA**  - MIcroSAtellite identification tool
+
+The MISA  script was developed at IPK by Thomas Thiel
+
+http://pgrc.ipk-gatersleben.de/misa/
+
+CITATION
+---------
+
+Exploiting EST databases for the development and characterization of gene-derived SSR-markers in barley (Hordeum vulgare L.)
+
+T. Thiel, W. Michalek, R. Varshney and A. Graner
+
+THEORETICAL AND APPLIED GENETICS Volume 106, Number 3, 411-422
+
+DOI: 10.1007/s00122-002-1031-0
+
+**TIP**
+The primer design tool will work more predictably if fasta header lines are simplied to only include the sequence ID
+
+
+
+</help>
+
+</tool>

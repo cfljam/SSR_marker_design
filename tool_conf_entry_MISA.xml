@@ -1,0 +1,5 @@
+<section name="SSR Marker  Design" id="ssr_marker">
+    <tool file="tools/MISA/p3_misa_parameter.xml" />
+    <tool file="tools/MISA/clean_fasta_header.xml" />
+    <tool file="tools/MISA/design_MISA.xml" />
+  </section>

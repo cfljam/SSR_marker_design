@@ -1,0 +1,48 @@
+<tool id="misa2gff_1" name="MISA to GFF3">
+  <description>convert MISA to gvf/gff3</description>
+  <command >cat $inputFile | awk  '!/ID\W/  {OFS="\t";print $1,"MISA","microsatellite",$6,$7,".",".",".","ID="$1":MISA:microsatellite:"$6";SSR="$4,";Type="$3}'  >  $outputfile</command>
+  <inputs>
+    <param format="tabular" name="inputFile" type="data" label="Input MISA File" help="MISA file from MISA.pl" />
+  </inputs>
+  <outputs>
+<data format="gff3" name="outputfile" />
+
+  </outputs>
+
+<help>
+
+.. class:: infomark
+
+**TIP**
+
+This tool parses MISA columnar output to valid GFF3 format
+
+-------------------
+
+**Example**
+
+*input*
+
+::
+
+ ID     SSR nr. SSR type        SSR     size    start   end
+ FW9DLND01C1Y2S 1       p2      (AC)11  22      89      110
+ FW9DLND01CSIIJ 1       p2      (AC)7   14      226     239
+ FW9DLND01DOGBK 1       p1      (A)12   12      162     173
+ FW9DLND01B7MCF 1       p2      (AT)7   14      22      35
+ FW9DLND01DHCGH 1       p2      (AT)7   14      108     121
+
+*output*
+
+::
+
+ FW9DLND01C1Y2S MISA    microsatellite  89      110     .       .       .       ID=FW9DLND01C1Y2S:MISA:microsatellite:89;SSR=(AC)11     ;Type=p2
+ FW9DLND01CSIIJ MISA    microsatellite  226     239     .       .       .       ID=FW9DLND01CSIIJ:MISA:microsatellite:226;SSR=(AC)7     ;Type=p2
+ FW9DLND01DOGBK MISA    microsatellite  162     173     .       .       .       ID=FW9DLND01DOGBK:MISA:microsatellite:162;SSR=(A)12     ;Type=p1
+ FW9DLND01B7MCF MISA    microsatellite  22      35      .       .       .       ID=FW9DLND01B7MCF:MISA:microsatellite:22;SSR=(AT)7      ;Type=p2
+ FW9DLND01DHCGH MISA    microsatellite  108     121     .       .       .       ID=FW9DLND01DHCGH:MISA:microsatellite:108;SSR=(AT)7     ;Type=p2
+
+
+</help>
+</tool>
+
