@@ -74,7 +74,7 @@ print OUT "ID\tSSR nr.\tSSR type\tSSR\tsize\tstart\tend\n";
 #use Cwd 'getcwd';
 #print getcwd()&"misa.ini";
 #print OUT abs_path($0);
-open (SPECS,"\/root\/galaxy_dist\/tools\/pfr_2010\/"."misa.ini") || die ("\nError: Specifications file doesn't exist ! \n\n misa.ini not found ! \n\n");
+open (SPECS,"misa.ini") || die ("\nError: Specifications file doesn't exist ! \n\n misa.ini not found ! \n\n");
 my %typrep;
 my $amb = 0;
 while (<SPECS>)
