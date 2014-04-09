@@ -65,16 +65,12 @@ if ($ARGV[0] =~ /-help/i)
 # Open FASTA file #
 
 open (IN,"<$ARGV[0]") || die ("\nError: FASTA file doesn't exist !\n\n");
-#open (OUT,">$ARGV[0].misa"); updated by Leshi chen for galaxy integration
-open (OUT,">$ARGV[1]");
+open (OUT,">$ARGV[0].misa");
 print OUT "ID\tSSR nr.\tSSR type\tSSR\tsize\tstart\tend\n";
 
-# Reading arguments updated by Leshi chen to get local path otherwise will create error #
-#use Cwd 'abs_path';
-#use Cwd 'getcwd';
-#print getcwd()&"misa.ini";
-#print OUT abs_path($0);
-open (SPECS,"misa.ini") || die ("\nError: Specifications file doesn't exist ! \n\n misa.ini not found ! \n\n");
+# Reading arguments #
+
+open (SPECS,"misa.ini") || die ("\nError: Specifications file doesn't exist !\n\n");
 my %typrep;
 my $amb = 0;
 while (<SPECS>)
@@ -201,8 +197,7 @@ while (<IN>)
   };
 
 close (OUT);
-#open (OUT,">$ARGV[0].statistics"); updated by Leshi chen for galaxy integration
-open (OUT,">$ARGV[2]");
+open (OUT,">$ARGV[0].statistics");
 
 #§§§§§ INFO §§§§§#
 
@@ -303,5 +298,4 @@ for ($i = 0; $i < scalar (@red_rev); $i++)
     };
   print OUT "\t",$red_rev[$i]->{"total"},"\n";
   };
-#add by Leshi to close the Out
-close (OUT);
+
