@@ -6,9 +6,6 @@
 SCRIPT=`readlink -f $0`
 SCRIPTPATH=`dirname $SCRIPT`
 
-echo $SCRIPTPATH 
-echo $1
-echo $2
 
 perl $SCRIPTPATH/p3_in.pl  $1 $2  temp.p3in
 
