@@ -9,7 +9,7 @@ Publications
 -----------
 
 * Thiel et al 2003 http://www.ncbi.nlm.nih.gov/pubmed/12589540
-* Badlwin et al 2012 http://dx.doi.org/10.1007/s11032-012-9727-6
+* Baldwin et al 2012 http://dx.doi.org/10.1007/s11032-012-9727-6
 
 
  
