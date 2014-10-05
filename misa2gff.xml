@@ -1,6 +1,6 @@
 <tool id="misa2gff_1" name="MISA to GFF3">
   <description>convert MISA to gvf/gff3</description>
-  <command >cat $inputFile | awk  '!/ID\W/  {OFS="\t";print $1,"MISA","microsatellite",$6,$7,".",".",".","ID="$1":MISA:microsatellite:"$6}'  >  $outputfile</command>
+  <command >cat $inputFile | awk  '!/ID\W/  {OFS="\t";print $1,"MISA","microsatellite",$6,$7,".",".",".","ID="$1":MISA:microsatellite:"$6";NOTE="$3" SSR motif "$4}'  >  $outputfile</command>
   <inputs>
     <param format="tabular" name="inputFile" type="data" label="Input MISA File" help="MISA file from MISA.pl" />
   </inputs>
