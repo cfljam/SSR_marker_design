@@ -17,7 +17,7 @@
 ##              (II) compound microsatellites (two individual microsatellites,
 ##                   disrupted by a certain number of bases)
 ##
-## SYNTAX:   misa.pl <FASTA file>
+## SYNTAX:   misa.pl <FASTA file> <output prefix>
 ##
 ##    <FASTAfile>    Single file in FASTA format containing the sequence(s).
 ##
@@ -34,7 +34,7 @@
 ##      definition(unit_size,min_repeats):          1-10 2-6 3-5 4-5 5-5 6-5
 ##      interruptions(max_difference_for_2_SSRs):   100
 ##
-## EXAMPLE: misa.pl seqs.fasta
+## EXAMPLE: misa.pl seqs.fasta output
 ##
 ## _______________________________________________________________________________
 ##
@@ -65,7 +65,7 @@ if ($ARGV[0] =~ /-help/i)
 # Open FASTA file #
 
 open (IN,"<$ARGV[0]") || die ("\nError: FASTA file doesn't exist !\n\n");
-open (OUT,">$ARGV[0].misa");
+open (OUT,">$ARGV[1].misa");
 print OUT "ID\tSSR nr.\tSSR type\tSSR\tsize\tstart\tend\n";
 
 # Reading arguments #
